@@ -339,13 +339,13 @@
         loop: true,
         speed: 1500,
         slidesPerView: 1,
+        autoplay: {
+          delay: 5000,
+          pauseOnMouseEnter: false
+        },
         pagination: {
           el: element.querySelector('.swiper-pagination'),
           clickable: true,
-        },
-        navigation: {
-          nextEl: '.p-section-project .swiper-button-next',
-          prevEl: '.p-section-project .swiper-button-prev',
         },
       });
     });
@@ -489,70 +489,6 @@
     }
   };
 
-  const initSectionScroll = () => {
-    gsap.registerPlugin(Observer);
-
-    let sections = document.querySelectorAll("section"),
-      images = document.querySelectorAll(".bg"),
-      currentIndex = 0,
-      animating = false;
-
-    sections.forEach((section, i) => {
-      gsap.set(section, {
-        top: i * 100 + 'vh'
-      });
-    });
-
-    let container = document.querySelector('main.main');
-
-    function gotoSection(index, direction) {
-      if (index < 0 || index >= sections.length || animating) {
-        return;
-      }
-
-      animating = true;
-
-      let tl = gsap.timeline({
-        defaults: {
-          duration: 1.5,
-          ease: "power2.inOut"
-        },
-        onComplete: () => animating = false
-      });
-
-      tl.to(container, {
-        y: -index * window.innerHeight
-      });
-
-      images.forEach((img, i) => {
-        if (i === index) {
-          tl.to(img, {
-            scale: 1
-          }, 0);
-        } else {
-          tl.to(img, {
-            scale: 1
-          }, 0);
-        }
-      });
-
-      currentIndex = index;
-    }
-
-    Observer.create({
-      type: "wheel,touch,pointer",
-      wheelSpeed: -1,
-      onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-      onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-      tolerance: 10,
-      preventDefault: true
-    });
-
-    gsap.set(container, {
-      y: 0
-    });
-  };
-
   detectBrowser();
   detectDevice();
   detectState();
@@ -566,7 +502,6 @@
   sliderKeyvisual();
   sliderShowcase();
   goTop();
-  initSectionScroll();
 })();
 
 //# sourceMappingURL=scripts.js.map

@@ -1,5 +1,5 @@
-@use '_variable' as *;
-@use '_mixin' as *;
+@use '_variable'as *;
+@use '_mixin'as *;
 
 .pc {
   @include sp {
@@ -49,4 +49,11 @@
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+
+.contain-common {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

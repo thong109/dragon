@@ -9,11 +9,11 @@ html {
   -ms-text-size-adjust: none;
 
   @include pc {
-    font-size: 625%;
+    font-size: calc(100dvw / 19.2);
   }
 
   @include sp {
-    font-size: 100vh;
+    font-size: calc(100dvw / 3.75);
   }
 }
 
