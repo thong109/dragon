@@ -1,0 +1,20 @@
+@use '../../_base/variable' as *;
+@use '../../_base/mixin' as *;
+
+.c-paragraph-primary {
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include pc {
+    font-size: 18rem;
+    line-height: calc(28 / 18);
+  }
+
+  @include sp {
+    font-size: 14rem;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,20 @@
+@use '_variable' as *;
+@use '_mixin' as *;
+
+@font-face {
+  font-family: 'TT_Commons';
+  src:
+    url('../font/TT_Commons_Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vogun';
+  src:
+    url('../font/Vogun_Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

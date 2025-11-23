@@ -1,0 +1,38 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-order": [
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "z-index",
+      "display",
+      "flex",
+      "flex-direction",
+      "justify-content",
+      "align-items",
+      "align-content",
+      "flex-wrap",
+      "grid",
+      "grid-template-columns",
+      "grid-template-rows",
+      "gap",
+      "width",
+      "height",
+      "margin",
+      "padding",
+      "border",
+      "border-radius",
+      "background",
+      "color",
+      "font",
+      "text-align",
+      "opacity",
+      "transition",
+      "animation"
+    ]
+  }
+}

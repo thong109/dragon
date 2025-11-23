@@ -1,0 +1,121 @@
+@use '../../_base/variable' as *;
+@use '../../_base/mixin' as *;
+
+.c-pagination {
+  @include flex($justify: center, $align: center);
+
+  .c-pagination__arrow {
+    position: relative;
+    flex: 0 0 auto;
+    border: 1px solid #e4e1e0;
+
+    &::after {
+      content: '';
+      background-color: $color-default;
+      mask: url(../img/common/icon_arrow_07.svg) 50% 50% / auto auto no-repeat;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: background 0.5s ease;
+    }
+  }
+
+  .c-pagination__arrow:hover {
+    &::after {
+      background-color: #e97342;
+    }
+  }
+
+  .c-pagination__arrow.c-pagination__arrow--next {
+    &::after {
+      transform: scale(-1, 1);
+    }
+  }
+
+  .c-pagination__wrapper {
+    @include flex($justify: center, $align: center, $wrap: wrap);
+  }
+
+  .c-pagination__entry-number {
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition:
+      border 0.5s ease,
+      background 0.5s ease,
+      color 0.5s ease;
+
+    @include flex($justify: center, $align: center);
+  }
+
+  .c-pagination__entry-number:hover {
+    color: #e97342;
+  }
+
+  .c-pagination__entry-number.c-pagination__entry-number--state-active {
+    border: 1px solid #e97342;
+    background-color: #e97342;
+    color: $color-white;
+  }
+
+  .c-pagination__entry-label {
+    position: relative;
+  }
+
+  @include pc {
+    margin-top: 50rem;
+    gap: 15rem;
+
+    .c-pagination__arrow {
+      width: 48rem;
+      height: 48rem;
+      border-radius: 24rem;
+
+      &::after {
+        mask-size: 18rem auto;
+      }
+    }
+
+    .c-pagination__wrapper {
+      gap: 15rem 10rem;
+    }
+
+    .c-pagination__entry-number {
+      min-width: 48rem;
+      min-height: 48rem;
+      padding: 8rem;
+      border-radius: 24rem;
+      font-size: 18rem;
+      line-height: calc(28 / 18);
+    }
+  }
+
+  @include sp {
+    margin-top: 30rem;
+    gap: 10rem;
+
+    .c-pagination__arrow {
+      width: 36rem;
+      height: 36rem;
+      border-radius: 18rem;
+
+      &::after {
+        mask-size: 16rem auto;
+      }
+    }
+
+    .c-pagination__wrapper {
+      gap: 10rem 5rem;
+    }
+
+    .c-pagination__entry-number {
+      min-width: 36rem;
+      min-height: 36rem;
+      padding: 4rem;
+      border-radius: 18rem;
+      font-size: 16rem;
+      line-height: calc(24 / 16);
+    }
+  }
+}

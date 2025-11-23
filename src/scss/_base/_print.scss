@@ -1,0 +1,102 @@
+@media print {
+  /* Remove all backgrounds and enforce black text */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Remove useless UI */
+  nav,
+  aside,
+  header,
+  footer,
+  form,
+  button,
+  input,
+  textarea,
+  iframe,
+  audio,
+  video {
+    display: none !important;
+  }
+
+  /* Reset links to show URLs */
+  a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 90%;
+  }
+
+  /* Images only if needed */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse !important;
+  }
+  th,
+  td {
+    border: 1px solid #000 !important;
+    padding: 4px;
+  }
+
+  /* Typography adjustments */
+  body {
+    font: 12pt/1.5 serif !important;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    font-weight: bold !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-before: avoid;
+  }
+
+  /* Avoid cutting important blocks */
+  blockquote,
+  pre {
+    page-break-inside: avoid;
+  }
+
+  /* Reset page margins (browser default often adds its own) */
+  @page {
+    margin: 0;
+    size: 11in 14.028in;
+  }
+
+  @page :left {
+    margin: 0;
+  }
+
+  @page :right {
+    margin: 0;
+  }
+
+  @page :first {
+    margin-top: 0;
+  }
+}

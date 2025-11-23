@@ -1,0 +1,149 @@
+@use '../../_base/variable' as *;
+@use '../../_base/mixin' as *;
+
+.c-thumbnail {
+  position: relative;
+  overflow: hidden;
+
+  .c-thumbnail__wrapper {
+    position: relative;
+  }
+
+  .u-object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.c-thumbnail.c-thumbnail--style-snippet {
+  border-radius: 20rem;
+  box-shadow: 0 5rem 0 0 #e97342;
+  font-weight: 600;
+  color: $color-white;
+  overflow: visible;
+
+  @include flex($align: flex-end);
+
+  .c-thumbnail__wrapper {
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .c-thumbnail__wrapper::after {
+    content: "";
+    background: url(../img/common/mask_introduction_01.png) 50% 100% / 100% auto no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .c-thumbnail__label {
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  .u-object {
+    z-index: 0;
+  }
+
+  @include pc {
+    font-size: 20rem;
+    line-height: calc(30 / 20);
+
+    .c-thumbnail__label {
+      padding: 14rem 41rem;
+    }
+  }
+
+  @include pc-laptop {
+    font-size: 18rem;
+    line-height: calc(30 / 18);
+
+    .c-thumbnail__label {
+      padding: 15rem 20rem;
+    }
+  }
+
+  @include pc-tablet {
+    font-size: 16rem;
+    line-height: calc(24 / 16);
+
+    .c-thumbnail__label {
+      padding: 15rem 20rem;
+    }
+  }
+
+  @include sp {
+    font-size: 16rem;
+    line-height: calc(24 / 16);
+
+    .c-thumbnail__label {
+      padding: 15rem;
+    }
+  }
+}
+
+.c-thumbnail.c-thumbnail--style-snippet::after {
+  content: "";
+  width: 0;
+  flex: 0 0 auto;
+  padding-top: calc(260 / 520 * 100%);
+}
+
+.c-thumbnail-product {
+  border-radius: 20rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  padding-top: calc(373 / 587 * 100%);
+
+  .u-object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.c-thumbnail-product::before {
+  content: '';
+  position: absolute;
+  opacity: 0;
+  border-radius: 50%;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  background: #e97342 url(../img/common/icon_plus_01.svg) 50% 50% / contain no-repeat;
+  pointer-events: none;
+
+  @include pc {
+    width: 88rem;
+    height: 88rem;
+    top: calc(50% - 44rem);
+    left: calc(50% - 44rem);
+  }
+
+  @include sp {
+    width: 44rem;
+    height: 44rem;
+    top: calc(50% - 22rem);
+    left: calc(50% - 22rem);
+  }
+}
+
+.c-thumbnail-product:hover {
+  &::before {
+    opacity: 1;
+  }
+}

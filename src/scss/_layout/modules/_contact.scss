@@ -1,0 +1,177 @@
+@use '../../_base/variable' as *;
+@use '../../_base/mixin' as *;
+
+.c-contact {
+  .c-contact__wrapper {
+    border: 5rem solid #fbf7f4;
+    background-color: #fbf7f4;
+    border-radius: 20rem;
+  }
+
+  .c-contact__information {
+    background-color: $color-white;
+    border-radius: 8rem 8rem 18rem 18rem;
+    border-top: 1rem solid #e0dcda;
+  }
+
+  .c-contact__information-label {
+    margin: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .c-contact__item-link {
+    position: relative;
+
+    @include flex($align: center, $gap: 10rem);
+  }
+
+  .c-contact__item-link::before {
+    content: '';
+    background: 50% 50% / 100% auto no-repeat;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    width: 50rem;
+    height: 50rem;
+  }
+
+  .c-contact__item-link.c-contact__item-link--zalo::before {
+    background-image: url(../img/common/icon_contact_zalo.png);
+  }
+
+  .c-contact__item-link.c-contact__item-link--whatsapp::before {
+    background-image: url(../img/common/icon_contact_whatsapp.png);
+  }
+
+  .c-contact__item-link.c-contact__item-link--hotline::before {
+    background-image: url(../img/common/icon_contact_hotline.png);
+  }
+
+  .c-contact__item-label {
+    display: block;
+    font-weight: 400;
+  }
+
+  .c-contact__item-content {
+    display: block;
+    font-weight: 600;
+  }
+
+  @include pc {
+    padding: 113rem 0 90rem;
+
+    .c-contact__wrapper {
+      max-width: 1110rem;
+      margin: 0 auto;
+    }
+
+    .c-contact__information {
+      padding: 10rem 43rem;
+    }
+
+    .c-contact__information-wrapper {
+      @include flex($align: center, $gap: 45rem);
+    }
+
+    .c-contact__information-label {
+      max-width: 250rem;
+      flex: 0 0 auto;
+      font-size: 20rem;
+      line-height: calc(30 / 20);
+    }
+
+    .c-contact__list-wrapper {
+      @include flex($align: center, $wrap: wrap, $gap: 31rem);
+    }
+
+    .c-contact__item-label {
+      font-size: 16rem;
+      line-height: calc(24 / 16);
+    }
+
+    .c-contact__item-content {
+      font-size: 18rem;
+      line-height: calc(24 / 18);
+    }
+
+    .c-title-second {
+      margin-bottom: 50rem;
+    }
+  }
+
+  @include pc-tablet {
+    padding: 100rem 0;
+
+    .c-contact__information {
+      padding: 10rem 20rem;
+    }
+
+    .c-contact__information-wrapper {
+      gap: 20rem;
+    }
+
+    .c-contact__information-label {
+      font-size: 18rem;
+      line-height: calc(30 / 18);
+    }
+
+    .c-contact__list-wrapper {
+      gap: 20rem;
+    }
+  }
+
+  @include sp {
+    padding: 60rem 0;
+
+    .c-title-second {
+      margin-bottom: 30rem;
+    }
+
+    .c-contact__information {
+      padding: 20rem;
+    }
+
+    .c-contact__information-wrapper {
+      @include flex($direction: column, $align: center, $gap: 20rem);
+    }
+
+    .c-contact__information-label {
+      font-size: 18rem;
+      line-height: calc(24 / 18);
+      text-align: center;
+    }
+
+    .c-contact__list-wrapper {
+      @include flex($direction: column, $gap: 20rem);
+    }
+
+    .c-contact__information-label {
+      max-width: 250rem;
+      flex: 0 0 auto;
+      font-size: 20rem;
+      line-height: calc(30 / 20);
+    }
+
+    .c-contact__item-label {
+      font-size: 14rem;
+      line-height: calc(20 / 14);
+    }
+
+    .c-contact__item-content {
+      font-size: 16rem;
+      line-height: calc(24 / 16);
+    }
+  }
+}
+
+.c-contact.c-contact--style-projects {
+  @include pc {
+    margin-bottom: 75rem;
+    padding: 0;
+  }
+
+  @include sp {
+    margin-bottom: 60rem;
+    padding: 0;
+  }
+}

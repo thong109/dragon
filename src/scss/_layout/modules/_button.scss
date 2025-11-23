@@ -1,0 +1,33 @@
+@use '../../_base/variable'as *;
+@use '../../_base/mixin'as *;
+
+.button-common-primary {
+  position: relative;
+  background-color: $color-lion;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  border-radius: .50rem;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: .20rem;
+    mask: url(../img/common/icon_arrow_01.svg) 50% 50% / contain no-repeat;
+    transition: margin-right 0.5s ease-in-out;
+    width: .10rem;
+    height: .10rem;
+    background-color: $color-white;
+  }
+
+  @include pc {
+    padding: .02rem .35rem .03rem .1rem;
+    width: 1.66rem;
+    min-height: .45rem;
+  }
+}

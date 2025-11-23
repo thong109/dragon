@@ -1,0 +1,24 @@
+@use '../../_base/variable'as *;
+@use '../../_base/mixin'as *;
+
+.title-common-primary {
+  text-align: center;
+  color: $color-white;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: $fontfamily-vogun;
+
+  &.is-lion {
+    color: $color-lion;
+  }
+
+  &.is-start {
+    text-align: left;
+  }
+
+  @include pc {
+    margin-bottom: .16rem;
+    font-size: .50rem;
+    line-height: calc(60 / 50);
+  }
+}

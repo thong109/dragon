@@ -1,0 +1,50 @@
+@use '../../_base/variable' as *;
+@use '../../_base/mixin' as *;
+
+.c-time {
+  display: flex;
+  align-items: center;
+
+  .c-time__label {
+    color: #707070;
+
+    strong {
+      color: #e97342;
+      font-weight: 600;
+    }
+  }
+
+  @include pc {
+    .c-time__label {
+      font-size: 16rem;
+
+      strong {
+        font-size: 24rem;
+      }
+    }
+  }
+
+  @include sp {
+    .c-time__label {
+      font-size: 14rem;
+
+      span {
+        font-size: 20rem;
+      }
+    }
+  }
+}
+
+.c-time::before {
+  content: '';
+  width: 20rem;
+  height: 20rem;
+  background: url(../img/common/icon_date_01.svg) 50% 50% / 100% auto no-repeat;
+  flex: 0 0 auto;
+  margin-right: 8rem;
+  position: relative;
+
+  @include sp {
+    top: -2rem;
+  }
+}

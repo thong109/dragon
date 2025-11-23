@@ -1,0 +1,52 @@
+@use '_variable' as *;
+@use '_mixin' as *;
+
+.pc {
+  @include sp {
+    display: none !important;
+  }
+}
+
+.sp {
+  @include pc {
+    display: none !important;
+  }
+}
+
+.pc-layout {
+  @include sp-layout {
+    display: none !important;
+  }
+}
+
+.sp-layout {
+  @include pc-layout {
+    display: none !important;
+  }
+}
+
+.trans {
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.trans:hover {
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
+}
+
+.image-common {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.object-common {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
