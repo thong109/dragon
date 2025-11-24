@@ -1,5 +1,5 @@
-@use '_base/_variable'as *;
-@use '_base/_mixin'as *;
+@use '_base/_variable' as *;
+@use '_base/_mixin' as *;
 
 @keyframes aniStroke {
   0% {
@@ -731,7 +731,7 @@ html {
 .left-header,
 .right-header {
   position: fixed;
-  top: 1rem;
+  top: .18rem;
   width: auto;
   height: auto;
   display: flex;
@@ -740,7 +740,7 @@ html {
 }
 
 .right-header {
-  right: 2rem;
+  right: .49rem;
   color: var(--color-highlight);
 }
 
@@ -767,11 +767,11 @@ html {
   align-items: center;
   margin: 0;
   color: currentColor;
-  padding: 0 1rem;
+  padding: 0 .1rem;
 }
 
 .subscribe {
-  padding: 0 1rem 0 0;
+  padding: 0 .1rem 0 0;
 }
 
 .hotline .effect-text,
@@ -800,7 +800,6 @@ html {
 }
 
 .hotline .icon::after,
-.language li::after,
 .subscribe .icon::after,
 .v360 .icon::after {
   content: "";
@@ -977,14 +976,29 @@ html {
 
 .language {
   text-align: center;
-  padding: 0 1rem;
-  margin: 0 1rem;
   z-index: 5;
   width: auto;
+  position: relative;
+  margin-right: .22rem;
+  padding-right: 13px;
+  top: -0.06rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: .01rem;
+    height: .225rem;
+    background: $color-white;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .language ul {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .language li,
@@ -992,14 +1006,33 @@ html {
 .language li button {
   position: relative;
   align-items: center;
-  color: currentColor;
+  display: flex;
+  color: $color-white;
 }
 
 .language li {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: none;
+  width: .47rem;
+  height: .47rem;
   border-radius: 50%;
+  padding: 0 .06rem;
+
+  &.active {
+    a {
+      color: $color-lion;
+    }
+
+    &::after {
+      border: 1px solid $color-lion;
+      border-radius: 50%;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
 }
 
 .language li a,
@@ -1009,8 +1042,8 @@ html {
   display: inline-flex;
   justify-content: center;
   margin: 0;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.2rem;
+  line-height: calc(29 / 20);
   text-transform: uppercase;
   z-index: 5;
 }
@@ -1035,51 +1068,96 @@ html {
 
 .nav-click {
   cursor: pointer;
-  color: currentColor;
+  color: $color-white;
   position: relative;
   width: auto;
   height: auto;
   z-index: 5;
 }
 
-.nav-click .line-svg {
-  width: 4rem;
-  height: 3rem;
+.nav-click .line-svg,
+.nav-click .nav-line-button {
+  width: .4rem;
+  height: .3rem;
+}
+
+.nav-line-button {
+  .nav-line {
+    margin-left: auto;
+    display: block;
+    background: $color-white;
+    position: relative;
+    width: .27rem;
+    height: .01rem;
+    transition: all .35s ease;
+
+    &:nth-child(2) {
+      top: .07rem;
+      width: .18rem;
+    }
+
+    &:nth-child(3) {
+      top: .14rem;
+    }
+  }
+}
+
+.nav-click.active {
+  .nav-line {
+    &:nth-child(1) {
+      transform: translatey(.1rem) rotate(-36deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-0.06rem) rotate(36deg);
+    }
+  }
 }
 
 .nav-click rect {
-  fill: currentColor;
+  fill: $color-white;
   transform-origin: center center;
 }
 
 .nav-click .nav-text {
-  position: absolute;
+  position: relative;
   display: block;
-  width: 2rem;
-  height: 1rem;
-  top: 4rem;
-  left: 1rem;
-  transform: rotate(-90deg);
+  width: .66rem;
+  top: -0.06rem;
+  margin-right: -0.08rem;
 }
 
 .nav-click .nav-text span {
   position: absolute;
-  left: 0;
-  top: 0;
-  letter-spacing: 1px;
-  font-size: 0.6rem;
-  font-weight: 700;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.2rem;
+  line-height: calc(29 / 20);
+  font-weight: 400;
   display: block;
-  color: currentColor;
+  color: $color-white;
   text-transform: uppercase;
-  white-space: nowrap;
   transition: 0.3s all ease-in-out;
-  overflow: hidden;
-  width: 0;
+
+  &.is-close {
+    opacity: 0;
+  }
 }
 
 .nav-click.active .nav-text span {
-  width: 3rem;
+  width: .66rem;
+
+  &.is-menu {
+    opacity: 0;
+  }
+
+  &.is-close {
+    opacity: 1;
+  }
 }
 
 .nav-click.active .one {
@@ -1110,12 +1188,14 @@ html {
 
 .nav {
   position: absolute;
-  width: 35vw;
-  height: auto;
+  height: 100vh;
   right: 0;
   display: block;
-  text-align: left;
+  text-align: right;
   z-index: 30;
+  background: $color-default url(../img/common/menu_bg_01.png) center center / cover no-repeat;
+  max-width: 6.37rem;
+  width: 100%;
 }
 
 .nav::before,
@@ -1142,36 +1222,33 @@ html {
   display: inline-block;
   margin: 0;
   list-style: none;
-  padding: 0 3rem;
+  padding: 1.76rem .52rem;
+  width: 100%;
+  height: 100%;
 }
 
 .item-menu-second>a,
 .main-menu li {
   position: relative;
-  color: var(--color-normal-dark);
+  color: $color-white;
 }
 
 .main-menu li {
   display: block;
-  margin: 0.5rem 0;
-  padding: 0 1rem;
+  margin: 0 0 .25rem;
 }
 
 .nav-item {
+  color: $color-white;
   position: relative;
   display: inline-flex;
   align-items: center;
   color: currentColor;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.2rem;
-}
-
-.main-menu li.active,
-.main-menu li.current,
-.nav-item .hover {
-  color: var(--color-highlight);
+  font-size: .45rem;
+  line-height: calc(60 / 45);
+  font-family: $fontfamily-vogun;
+  font-weight: 500;
 }
 
 .main-menu li .nav-item.active .hover {
@@ -1226,6 +1303,7 @@ html {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
   z-index: 5;
+  background: rgba($color: #004c40, $alpha: .6);
 }
 
 .overlay-menu::before {
@@ -1327,7 +1405,7 @@ html {
 }
 
 .item-menu-second>a::before {
-  content: "0"counter(section) ".";
+  content: "0" counter(section) ".";
   display: inline-block;
   font-weight: 600;
   font-size: 0.6rem;
@@ -1807,7 +1885,7 @@ html {
   pointer-events: auto;
   cursor: pointer;
   animation-name: fadeInUp;
-  display: none !important; 
+  display: none !important;
 }
 
 @media screen and (min-width: 1100px) {
@@ -1851,7 +1929,7 @@ html {
 
   .smooth .header.hide .left-header,
   .smooth .header.hide .right-header {
-    top: 1rem;
+    top: .1rem;
     color: var(--color-normal-dark);
   }
 
@@ -1953,7 +2031,7 @@ html {
   .logo {
     width: 10rem;
     height: calc(160 / 500 * 10rem);
-    top: 1.5rem;
+    top: .15rem;
     left: calc(50% - 5rem);
   }
 
@@ -1963,17 +2041,17 @@ html {
 
   .left-header,
   .right-header {
-    top: 1.5rem;
+    top: .15rem;
     transition: top 0.2s ease-in-out;
   }
 
   .right-header {
-    right: 1.5rem;
+    right: .15rem;
     color: var(--color-white);
   }
 
   .left-header {
-    left: 1.5rem;
+    left: .15rem;
   }
 
   .right-header .link-home {
@@ -1981,8 +2059,8 @@ html {
   }
 
   .link-home {
-    width: 3rem;
-    height: 3rem;
+    width: .3rem;
+    height: .3rem;
   }
 
   .hotline,
@@ -2028,33 +2106,22 @@ html {
     height: 2.5rem;
   }
 
-  .nav-click .line-svg {
-    width: 3rem;
-    height: 2.5rem;
-  }
-
-  .nav-click .nav-text {
-    left: 0.7rem;
-  }
-
-  .nav-click.active .one {
-    transform: translate(0, 2.25rem) rotate(45deg);
-  }
-
-  .nav-click.active .three {
-    transform: translate(0, -2.25rem) rotate(-45deg);
+  .nav-click .nav-line-button {
+    width: .3rem;
+    height: .25rem;
   }
 
   .language {
-    margin: 0 0.5rem;
+    margin: 0 0.06rem;
+    padding-right: .06rem;
   }
 
   .nav {
     width: 100%;
-    height: calc(100% - 10rem);
+    height: 100%;
     left: 0;
     right: auto;
-    top: 7rem;
+    top: 0;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -2063,11 +2130,11 @@ html {
 
   .main-menu {
     width: 100%;
-    padding: 0 5vw;
+    padding: 1.05rem 5vw;
   }
 
   .main-menu li {
-    margin: 1rem 0;
+    margin: .15rem 0;
     padding: 0;
   }
 
@@ -2076,12 +2143,11 @@ html {
   }
 
   .main-menu li:last-child {
-    margin: 1rem 0 3rem;
+    margin: .1rem 0 .3rem;
   }
 
   .nav-item {
-    letter-spacing: 0;
-    font-weight: 500;
+    font-size: .2rem;
     justify-content: center;
   }
 
@@ -2284,7 +2350,7 @@ html {
   }
 
   .right-header {
-    right: 1rem;
+    right: .16rem;
   }
 
   .left-header {
@@ -2298,10 +2364,6 @@ html {
   .left-header .link-social,
   .subscribe {
     margin: 0 0 0.5rem;
-  }
-
-  .language {
-    margin: 0;
   }
 
   .title-page {
@@ -2387,7 +2449,7 @@ html {
 
   .header.active .right-header,
   .smooth .header.active .right-header {
-    top: 1rem;
+    top: .1rem;
   }
 
   .header.active .logo,
@@ -2395,7 +2457,7 @@ html {
   .smooth .header.active .logo {
     width: calc(500 / 160 * 40px);
     height: 40px;
-    top: 1rem;
+    top: .1rem;
   }
 }
 
@@ -4815,7 +4877,7 @@ html {
 }
 
 .key-block p {
-  top: 1rem;
+  top: .1rem;
 }
 
 .key-block strong,
