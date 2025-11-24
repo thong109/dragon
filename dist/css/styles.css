@@ -10,7 +10,7 @@
   font-family: 'Vogun';
   font-style: normal;
   font-weight: 500;
-  src: url('../font/Vogun_Medium.ttf') format('truetype');
+  src: url('../font/vogun.otf') format('opentype');
 }
 html,
 body,
@@ -328,7 +328,6 @@ input[type='search'] {
   }
   /* Typography adjustments */
   body {
-    font: 12pt/1.5 serif !important;
     margin: 0;
   }
   h1,
@@ -471,7 +470,7 @@ select {
   font: inherit;
 }
 
-.body {
+body {
   color: #195450;
   font-family: 'TT_Commons', serif;
   font-size: 0.2rem;
@@ -505,8 +504,11 @@ select {
   color: #fff;
   font-family: 'Vogun', sans-serif;
   font-weight: 500;
+  position: relative;
   text-align: center;
   text-transform: uppercase;
+  width: 100%;
+  z-index: 1;
 }
 .title-common-primary.is-lion {
   color: #c19e74;

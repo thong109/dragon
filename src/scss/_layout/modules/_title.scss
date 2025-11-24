@@ -7,6 +7,9 @@
   font-weight: 500;
   text-transform: uppercase;
   font-family: $fontfamily-vogun;
+  position: relative;
+  z-index: 1;
+  width: 100%;
 
   &.is-lion {
     color: $color-lion;
