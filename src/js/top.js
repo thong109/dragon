@@ -14,11 +14,16 @@ sections.forEach((section, i) => {
 let container = document.querySelector('main.main');
 
 function gotoSection(index, direction) {
-  if (index < 0 || index >= sections.length || animating) {
+  // Kiểm tra index hợp lệ trước
+  index = Math.max(0, Math.min(index, sections.length - 1));
+  
+  // Nếu đã ở section đó hoặc đang animate thì return
+  if (index === currentIndex || animating) {
     return;
   }
 
   animating = true;
+  currentIndex = index;
 
   let tl = gsap.timeline({
     defaults: {
@@ -26,15 +31,14 @@ function gotoSection(index, direction) {
       ease: "power2.inOut"
     },
     onComplete: () => {
-      animating = false
+      animating = false;
     }
   });
 
+  // Sử dụng percentage thay vì pixel để tính chính xác hơn
   tl.to(container, {
-    y: -index * window.innerHeight
+    y: (-index * 100) + 'vh'
   });
-
-  currentIndex = index;
 }
 
 Observer.create({
@@ -42,7 +46,7 @@ Observer.create({
   wheelSpeed: -1,
   onDown: () => !animating && gotoSection(currentIndex - 1, -1),
   onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-  tolerance: 10,
+  tolerance: 50, // Tăng tolerance để tránh trigger nhạy
   preventDefault: true
 });
 
