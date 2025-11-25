@@ -9,6 +9,7 @@
   justify-content: center;
   color: $color-white;
   border-radius: .50rem;
+  width: 1.66rem;
 
   &::after {
     content: '';
@@ -27,7 +28,12 @@
 
   @include pc {
     padding: .02rem .35rem .03rem .1rem;
-    width: 1.66rem;
     min-height: .45rem;
+  }
+
+  @include sp {
+    padding: .04rem .35rem .03rem .1rem;
+    min-height: .3rem;
+    font-size: 0.16rem;
   }
 }

@@ -24,4 +24,14 @@
     font-size: .50rem;
     line-height: calc(60 / 50);
   }
+
+  @include sp {
+    margin-bottom: .12rem;
+    font-size: .28rem;
+    line-height: calc(40 / 28);
+
+    &.is-start {
+      text-align: center;
+    }
+  }
 }
