@@ -753,14 +753,14 @@ html {
   display: flex;
   height: auto;
   position: fixed;
-  top: 1rem;
+  top: 0.18rem;
   width: auto;
   z-index: 30;
 }
 
 .right-header {
   color: var(--color-highlight);
-  right: 2rem;
+  right: 0.49rem;
 }
 
 .left-header {
@@ -784,13 +784,13 @@ html {
   display: flex;
   height: auto;
   margin: 0;
-  padding: 0 1rem;
+  padding: 0 0.1rem;
   position: relative;
   width: auto;
 }
 
 .subscribe {
-  padding: 0 1rem 0 0;
+  padding: 0 0.1rem 0 0;
 }
 
 .hotline .effect-text,
@@ -819,7 +819,6 @@ html {
 }
 
 .hotline .icon::after,
-.language li::after,
 .subscribe .icon::after,
 .v360 .icon::after {
   border: 1px solid currentColor;
@@ -995,14 +994,28 @@ html {
 }
 
 .language {
-  margin: 0 1rem;
-  padding: 0 1rem;
+  margin-right: 0.22rem;
+  padding-right: 13px;
+  position: relative;
   text-align: center;
+  top: -0.06rem;
   width: auto;
   z-index: 5;
 }
+.language::after {
+  background: #fff;
+  content: '';
+  height: 0.225rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.01rem;
+}
 
 .language ul {
+  align-items: center;
+  display: flex;
   width: 100%;
 }
 
@@ -1010,24 +1023,39 @@ html {
 .language li a,
 .language li button {
   align-items: center;
-  color: currentColor;
+  color: #fff;
+  display: flex;
   position: relative;
 }
 
 .language li {
   border-radius: 50%;
-  display: none;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 0.47rem;
+  padding: 0 0.06rem;
+  width: 0.47rem;
+}
+.language li.active a {
+  color: #c19e74;
+}
+.language li.active::after {
+  border: 1px solid #c19e74;
+  border-radius: 50%;
+  content: '';
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .language li a,
 .language li button {
   display: inline-flex;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.2rem;
   height: auto;
   justify-content: center;
+  line-height: 1.45;
   margin: 0;
   text-transform: uppercase;
   width: 100%;
@@ -1053,7 +1081,7 @@ html {
 }
 
 .nav-click {
-  color: currentColor;
+  color: #fff;
   cursor: pointer;
   height: auto;
   position: relative;
@@ -1061,44 +1089,76 @@ html {
   z-index: 5;
 }
 
-.nav-click .line-svg {
-  height: 3rem;
-  width: 4rem;
+.nav-click .line-svg,
+.nav-click .nav-line-button {
+  height: 0.3rem;
+  width: 0.4rem;
+}
+
+.nav-line-button .nav-line {
+  background: #fff;
+  display: block;
+  height: 0.01rem;
+  margin-left: auto;
+  position: relative;
+  transition: all 0.35s ease;
+  width: 0.27rem;
+}
+.nav-line-button .nav-line:nth-child(2) {
+  top: 0.07rem;
+  width: 0.18rem;
+}
+.nav-line-button .nav-line:nth-child(3) {
+  top: 0.14rem;
+}
+
+.nav-click.active .nav-line:nth-child(1) {
+  transform: translatey(0.1rem) rotate(-36deg);
+}
+.nav-click.active .nav-line:nth-child(2) {
+  opacity: 0;
+}
+.nav-click.active .nav-line:nth-child(3) {
+  transform: translateY(-0.06rem) rotate(36deg);
 }
 
 .nav-click rect {
-  fill: currentColor;
+  fill: #fff;
   transform-origin: center center;
 }
 
 .nav-click .nav-text {
   display: block;
-  height: 1rem;
-  left: 1rem;
-  position: absolute;
-  top: 4rem;
-  transform: rotate(-90deg);
-  width: 2rem;
+  margin-right: -0.08rem;
+  position: relative;
+  top: -0.06rem;
+  width: 0.66rem;
 }
 
 .nav-click .nav-text span {
-  color: currentColor;
+  color: #fff;
   display: block;
-  font-size: 0.6rem;
-  font-weight: 700;
-  left: 0;
-  letter-spacing: 1px;
-  overflow: hidden;
+  font-size: 0.2rem;
+  font-weight: 400;
+  line-height: 1.45;
   position: absolute;
   text-transform: uppercase;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   transition: 0.3s all ease-in-out;
-  white-space: nowrap;
-  width: 0;
+}
+.nav-click .nav-text span.is-close {
+  opacity: 0;
 }
 
 .nav-click.active .nav-text span {
-  width: 3rem;
+  width: 0.66rem;
+}
+.nav-click.active .nav-text span.is-menu {
+  opacity: 0;
+}
+.nav-click.active .nav-text span.is-close {
+  opacity: 1;
 }
 
 .nav-click.active .one {
@@ -1128,12 +1188,15 @@ html {
 }
 
 .nav {
+  background: #195450 url(../img/common/menu_bg_01.png) center center/cover
+    no-repeat;
   display: block;
-  height: auto;
+  height: 100vh;
+  max-width: 6.37rem;
   position: absolute;
   right: 0;
-  text-align: left;
-  width: 35vw;
+  text-align: right;
+  width: 100%;
   z-index: 30;
 }
 
@@ -1157,40 +1220,37 @@ html {
 .main-menu {
   display: inline-block;
   height: auto;
+  height: 100%;
   list-style: none;
   margin: 0;
-  padding: 0 3rem;
+  padding: 1.76rem 0.52rem;
   position: relative;
   width: auto;
+  width: 100%;
 }
 
 .item-menu-second > a,
 .main-menu li {
-  color: var(--color-normal-dark);
+  color: #fff;
   position: relative;
 }
 
 .main-menu li {
   display: block;
-  margin: 0.5rem 0;
-  padding: 0 1rem;
+  margin: 0 0 0.25rem;
 }
 
 .nav-item {
   align-items: center;
+  color: #fff;
   color: currentColor;
   display: inline-flex;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.2rem;
+  font-family: 'Vogun', sans-serif;
+  font-size: 0.45rem;
+  font-weight: 500;
+  line-height: 1.3333333333;
   position: relative;
   text-transform: uppercase;
-}
-
-.main-menu li.active,
-.main-menu li.current,
-.nav-item .hover {
-  color: var(--color-highlight);
 }
 
 .main-menu li .nav-item.active .hover {
@@ -1235,6 +1295,7 @@ html {
 }
 
 .overlay-menu {
+  background: rgba(0, 76, 64, 0.6);
   height: 100%;
   left: 0;
   opacity: 0;
@@ -1867,7 +1928,7 @@ html {
   .smooth .header.hide .left-header,
   .smooth .header.hide .right-header {
     color: var(--color-normal-dark);
-    top: 1rem;
+    top: 0.1rem;
   }
   .smooth .header.hide .logo {
     height: 4rem;
@@ -1947,7 +2008,7 @@ html {
   .logo {
     height: 3.2rem;
     left: calc(50% - 5rem);
-    top: 1.5rem;
+    top: 0.15rem;
     width: 10rem;
   }
   .header::after {
@@ -1955,22 +2016,22 @@ html {
   }
   .left-header,
   .right-header {
-    top: 1.5rem;
+    top: 0.15rem;
     transition: top 0.2s ease-in-out;
   }
   .right-header {
     color: var(--color-white);
-    right: 1.5rem;
+    right: 0.15rem;
   }
   .left-header {
-    left: 1.5rem;
+    left: 0.15rem;
   }
   .right-header .link-home {
     display: none;
   }
   .link-home {
-    height: 3rem;
-    width: 3rem;
+    height: 0.3rem;
+    width: 0.3rem;
   }
   .hotline,
   .subscribe {
@@ -2007,51 +2068,42 @@ html {
     height: 2.5rem;
     width: 2.5rem;
   }
-  .nav-click .line-svg {
-    height: 2.5rem;
-    width: 3rem;
-  }
-  .nav-click .nav-text {
-    left: 0.7rem;
-  }
-  .nav-click.active .one {
-    transform: translate(0, 2.25rem) rotate(45deg);
-  }
-  .nav-click.active .three {
-    transform: translate(0, -2.25rem) rotate(-45deg);
+  .nav-click .nav-line-button {
+    height: 0.25rem;
+    width: 0.3rem;
   }
   .language {
-    margin: 0 0.5rem;
+    margin: 0 0.06rem;
+    padding-right: 0.06rem;
   }
   .nav {
     display: flex;
-    height: calc(100% - 10rem);
+    height: 100%;
     justify-content: center;
     left: 0;
     overflow-y: auto;
     right: auto;
     text-align: center;
-    top: 7rem;
+    top: 0;
     width: 100%;
   }
   .main-menu {
-    padding: 0 5vw;
+    padding: 1.05rem 5vw;
     width: 100%;
   }
   .main-menu li {
-    margin: 1rem 0;
+    margin: 0.15rem 0;
     padding: 0;
   }
   .main-menu li:nth-child(1) {
     display: block;
   }
   .main-menu li:last-child {
-    margin: 1rem 0 3rem;
+    margin: 0.1rem 0 0.3rem;
   }
   .nav-item {
-    font-weight: 500;
+    font-size: 0.2rem;
     justify-content: center;
-    letter-spacing: 0;
   }
   .logo-center {
     height: 3.2rem;
@@ -2216,7 +2268,7 @@ html {
     width: 140.625px;
   }
   .right-header {
-    right: 1rem;
+    right: 0.16rem;
   }
   .left-header {
     bottom: 2rem;
@@ -2228,9 +2280,6 @@ html {
   .left-header .link-social,
   .subscribe {
     margin: 0 0 0.5rem;
-  }
-  .language {
-    margin: 0;
   }
   .title-page {
     top: calc(var(--top-height) - 2rem);
@@ -2299,13 +2348,13 @@ html {
   }
   .header.active .right-header,
   .smooth .header.active .right-header {
-    top: 1rem;
+    top: 0.1rem;
   }
   .header.active .logo,
   .logo-center,
   .smooth .header.active .logo {
     height: 40px;
-    top: 1rem;
+    top: 0.1rem;
     width: 125px;
   }
 }
@@ -4724,7 +4773,7 @@ html {
 }
 
 .key-block p {
-  top: 1rem;
+  top: 0.1rem;
 }
 
 .key-block strong,
