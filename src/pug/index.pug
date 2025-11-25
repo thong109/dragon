@@ -13,29 +13,29 @@ block variable
 block main
   main.main
     section.section-top-keyvisual
-      .outer
-        .inner
-          .bg
-            .list-top-keyvisual
-              .swiper.js-slider-keyvisual
-                .swiper-wrapper
-                  .swiper-slide.slider-wrapper
-                    .slider-image(data-swiper-parallax="20%" data-swiper-parallax-opacity="1")
+      .outer-common
+        .outer-viewport
+          .outer-wrapper
+            .slider-top-keyvisual
+              .slider-viewport.swiper.js-slider-keyvisual
+                .slider-wrapper.swiper-wrapper
+                  .slider-slide.swiper-slide
+                    .slide-banner(data-swiper-parallax="20%" data-swiper-parallax-opacity="1")
                       img.object-common(src=imgLocalPC+"keyvisual_img_01.jpg" width="1920" height="1050" loading="eager" alt="")
-                  .swiper-slide.slider-wrapper
-                    .slider-image(data-swiper-parallax="20%" data-swiper-parallax-opacity="1")
+                  .slider-slide.swiper-slide
+                    .slide-banner(data-swiper-parallax="20%" data-swiper-parallax-opacity="1")
                       img.object-common(src=imgLocalPC+"keyvisual_img_02.jpg" width="1920" height="1050" loading="eager" alt="")
-                  .swiper-slide.slider-wrapper
-                    .slider-image(data-swiper-parallax="20%" data-swiper-parallax-opacity="1")
+                  .slider-slide.swiper-slide
+                    .slide-banner(data-swiper-parallax="20%" data-swiper-parallax-opacity="1")
                       img.object-common(src=imgLocalPC+"keyvisual_img_03.jpg" width="1920" height="1050" loading="eager" alt="")
-                  .swiper-slide.slider-wrapper
-                    .slider-image(data-swiper-parallax="20%" data-swiper-parallax-opacity="1")
+                  .slider-slide.swiper-slide
+                    .slide-banner(data-swiper-parallax="20%" data-swiper-parallax-opacity="1")
                       img.object-common(src=imgLocalPC+"keyvisual_img_04.jpg" width="1920" height="1050" loading="eager" alt="")
                 .swiper-pagination
     section.section-top-information
-      .outer
-        .inner
-          .bg
+      .outer-common
+        .outer-viewport
+          .outer-wrapper
             .wrapper
               h2.title-common-primary Thông tin tổng quan
               .information-controller
@@ -77,17 +77,17 @@ block main
                       ul.item-list
                         li Có quy hoạch 1/500 - Sổ riêng từng nền - Sang tên khách hàng – Xây dựng tự do.
     section.section-top-introduction
-      .outer
-        .inner
-          .bg
+      .outer-common
+        .outer-viewport
+          .outer-wrapper
             .wrapper
               img.object-common(src=imgLocalPC+"introduction_img_01.jpg" width="1621" height="846" loading="eager" alt="")
     section.section-top-area
       .area-thumbnail.is-clippath
         img.contain-common(src=imgLocalPC+"area_img_01.png" width="1701" height="979" loading="eager" alt="VỊ TRÍ DỰ ÁN")
-      .outer
-        .inner
-          .bg
+      .outer-common
+        .outer-viewport
+          .outer-wrapper
             .wrapper
               .area-wrapper
                 h2.title-common-primary.is-lion.is-start VỊ TRÍ DỰ ÁN
@@ -95,25 +95,42 @@ block main
                   .image-wrapper
                     img.object-common(src=imgLocalPC+"area_img_02.png" width="402" height="437" loading="eager" alt="VỊ TRÍ DỰ ÁN")
     section.section-top-utilities
-      .outer
-        .inner
-          .bg
+      .outer-common
+        .outer-viewport
+          .outer-wrapper
             .wrapper
     section.section-top-plan
-      .outer
-        .inner
-          .bg
+      .outer-common
+        .outer-viewport
+          .outer-wrapper
             .wrapper
               h2.title-common-primary Mặt bằng tổng thể
     section.section-top-library
-      .outer
-        .inner
-          .bg
+      .outer-common
+        .outer-viewport
+          .outer-wrapper
             .wrapper
               h2.title-common-primary.is-lion Thư viện
+            .slider-top-library.swiper
+              .slider-wrapper.swiper-wrapper
+                .slider-slide.swiper-slide
+                  figure.slide-banner
+                    img.object-common(src=imgLocalPC+"library_img_01.jpg" width="1070" height="658" loading="eager" alt="Hình ảnh Tổng thể dự án")
+                  .slide-wrapper
+                    span.slide-label Hình ảnh Tổng thể dự án
+                .slider-slide.swiper-slide
+                  figure.slide-banner
+                    img.object-common(src=imgLocalPC+"library_img_02.jpg" width="1070" height="658" loading="eager" alt="Hình ảnh Tổng thể dự án")
+                  .slide-wrapper
+                    span.slide-label Hình ảnh Tổng thể dự án
+                .slider-slide.swiper-slide
+                  figure.slide-banner
+                    img.object-common(src=imgLocalPC+"library_img_03.jpg" width="1070" height="658" loading="eager" alt="Hình ảnh Tổng thể dự án")
+                  .slide-wrapper
+                    span.slide-label Hình ảnh Tổng thể dự án
     section.section-top-news
-      .outer
-        .inner
-          .bg
+      .outer-common
+        .outer-viewport
+          .outer-wrapper
             .wrapper
               h2.title-common-primary.is-lion Tin tức

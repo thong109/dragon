@@ -1,7 +1,7 @@
 gsap.registerPlugin(Observer);
 
-let sections = document.querySelectorAll("section"),
-  images = document.querySelectorAll(".is-clippath"),
+let sections = document.querySelectorAll('section'),
+  images = document.querySelectorAll('.is-clippath'),
   currentIndex = 0,
   animating = false;
 
@@ -28,7 +28,7 @@ function gotoSection(index, direction) {
   let tl = gsap.timeline({
     defaults: {
       duration: 1,
-      ease: "power2.inOut"
+      ease: 'power2.inOut'
     },
     onComplete: () => {
       animating = false;
@@ -42,7 +42,7 @@ function gotoSection(index, direction) {
 }
 
 Observer.create({
-  type: "wheel,touch,pointer",
+  type: 'wheel,touch,pointer',
   wheelSpeed: -1,
   onDown: () => !animating && gotoSection(currentIndex - 1, -1),
   onUp: () => !animating && gotoSection(currentIndex + 1, 1),

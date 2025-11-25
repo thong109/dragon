@@ -10,21 +10,22 @@ section {
   top: 0;
   width: 100%;
 }
-section .outer,
-section .inner {
+
+.outer-common {
   height: 100%;
   overflow: hidden;
   position: relative;
   width: 100%;
   z-index: 10;
 }
-section .bg {
+.outer-common .outer-viewport {
   align-items: center;
   display: flex;
   height: 100%;
-  justify-content: center;
-  position: absolute;
-  top: 0;
+}
+.outer-common .outer-wrapper {
+  height: 100%;
+  position: relative;
   width: 100%;
 }
 
@@ -32,23 +33,23 @@ section .bg {
   background-color: #195450;
 }
 
-.list-top-keyvisual {
+.slider-top-keyvisual {
   height: 100%;
   width: 100%;
 }
-.list-top-keyvisual > div {
+.slider-top-keyvisual > div {
   height: 100%;
   width: 100%;
 }
-.list-top-keyvisual .swiper-slide {
+.slider-top-keyvisual .slider-slide {
   overflow: hidden;
 }
-.list-top-keyvisual .slider-image {
+.slider-top-keyvisual .slide-banner {
   height: 100%;
   position: relative;
   width: 100%;
 }
-.list-top-keyvisual .slider-image img {
+.slider-top-keyvisual .object-common {
   -o-object-position: top center;
   object-position: top center;
 }
@@ -211,7 +212,7 @@ section .bg {
 }
 
 .section-top-library {
-  background: #195450 url(../img/top/utilities_bg_01.png) center center/cover
+  background: #195450 url(../img/top/video_bg_01.jpg) center center/cover
     no-repeat;
 }
 

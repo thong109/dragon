@@ -7,29 +7,30 @@ body {
 }
 
 section {
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
+}
 
-  .outer,
-  .inner {
-    width: 100%;
+.outer-common {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+
+  .outer-viewport {
     height: 100%;
-    overflow: hidden;
-    position: relative;
-    z-index: 10;
-  }
-
-  .bg {
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 100%;
+  }
+  
+  .outer-wrapper {
     width: 100%;
-    top: 0;
+    height: 100%;
+    position: relative;
   }
 }
 
@@ -37,7 +38,7 @@ section {
   background-color: $color-default;
 }
 
-.list-top-keyvisual {
+.slider-top-keyvisual {
   height: 100%;
   width: 100%;
 
@@ -46,18 +47,18 @@ section {
     height: 100%;
   }
 
-  .swiper-slide {
+  .slider-slide {
     overflow: hidden;
   }
 
-  .slider-image {
+  .slide-banner {
     height: 100%;
     width: 100%;
     position: relative;
+  }
 
-    img {
-      object-position: top center;
-    }
+  .object-common {
+    object-position: top center;
   }
 }
 
@@ -229,5 +230,5 @@ section {
 }
 
 .section-top-library {
-  background: $color-default url(../img/top/utilities_bg_01.png) center center / cover no-repeat;
+  background: $color-default url(../img/top/video_bg_01.jpg) center center / cover no-repeat;
 }
