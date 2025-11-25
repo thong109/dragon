@@ -9,8 +9,8 @@
 @keyframes DrawStroke {
   0% {
     stroke-dashoffset: 800;
-    stroke-width: 0.5;
     transform: scale(1.4);
+    stroke-width: 0.5;
   }
   50% {
     transform: none;
@@ -567,9 +567,9 @@ html {
 
 .stroke-line {
   fill-opacity: 0;
+  stroke-width: 0.5;
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
-  stroke-width: 0.5;
 }
 
 .loader .stroke-line {
@@ -580,12 +580,12 @@ html {
 }
 
 .loader .x-line {
-  animation: aniStroke 3s alternate 1;
   fill: none;
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
   stroke-width: 0.3;
   transform-origin: center;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: aniStroke 3s alternate 1;
 }
 
 .loader .stroke-ani,
@@ -624,10 +624,10 @@ html {
 .stroke-ani {
   fill-opacity: 0;
   stroke: var(--color-white);
-  stroke-dasharray: 800;
-  stroke-dashoffset: 800;
   stroke-miterlimit: 10;
   stroke-width: 0.1;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
 }
 
 .loader .stroke-ani {
@@ -855,8 +855,8 @@ html {
 
 .hotline path.hover,
 .subscribe path.hover {
-  fill: currentColor;
   transform: translateY(calc(100% + 1rem));
+  fill: currentColor;
 }
 
 .hotline .icon,
@@ -935,8 +935,8 @@ html {
 
 .link-home .hover,
 .v360 path.hover {
-  fill: currentColor;
   transform: translateY(calc(100% + 1rem));
+  fill: currentColor;
 }
 
 .link-home.current .hover {
@@ -3284,11 +3284,11 @@ html {
 
 .st-line {
   fill: none;
-  stroke: var(--color-white-grey);
-  stroke-dasharray: 5;
   stroke-dashoffset: 0;
-  stroke-miterlimit: 5;
   stroke-width: 3px;
+  stroke-miterlimit: 5;
+  stroke-dasharray: 5;
+  stroke: var(--color-white-grey);
 }
 
 .st-line.sm {
@@ -4319,13 +4319,13 @@ html {
 }
 
 [data-name='block-A'] {
-  background-color: var(--block-A);
   fill: var(--block-A);
+  background-color: var(--block-A);
 }
 
 [data-name='block-B'] {
-  background-color: var(--block-B);
   fill: var(--block-B);
+  background-color: var(--block-B);
 }
 
 .hover-svg {
@@ -4356,8 +4356,8 @@ html {
 }
 
 .name-block text {
-  fill: var(--color-white);
   font-weight: 700;
+  fill: var(--color-white);
 }
 
 .name-block line {
@@ -4369,15 +4369,15 @@ html {
   fill: var(--color-highlight-alpha);
   fill-opacity: 0;
   stroke: var(--color-white);
+  stroke-width: 5px;
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
-  stroke-width: 5px;
   transition: all 0.3s ease-in-out;
 }
 
 .name-block.showbox .block-stroke {
-  fill: var(--color-highlight);
   fill-opacity: 1;
+  fill: var(--color-highlight);
 }
 
 .name-block .ani-fill {
@@ -4601,17 +4601,17 @@ html {
 
 .block-area {
   cursor: pointer;
-  fill-opacity: 0;
-  stroke: var(--color-white);
-  stroke-opacity: 0;
-  stroke-width: 1;
   transition: all 0.3s ease-in-out;
+  stroke: var(--color-white);
+  stroke-width: 1;
+  fill-opacity: 0;
+  stroke-opacity: 0;
 }
 
 .block-area.show {
   fill-opacity: 1;
-  filter: drop-shadow(0.2rem 0.3rem 0.5rem var(--color-black-alpha-03));
   stroke-opacity: 1;
+  filter: drop-shadow(0.2rem 0.3rem 0.5rem var(--color-black-alpha-03));
 }
 
 .text-house {
@@ -4620,9 +4620,9 @@ html {
 }
 
 .text-house text {
-  fill: var(--color-normal);
   font-size: 0.6rem;
   font-weight: 700;
+  fill: var(--color-normal);
 }
 
 [data-name='office'] {
@@ -5369,22 +5369,22 @@ html {
 }
 
 .keyplan-svg svg .bg path {
-  fill: var(--color-white-alpha-02);
   stroke: none;
+  fill: var(--color-white-alpha-02);
 }
 
 .keyplan-svg svg .frame path {
-  fill: none;
-  stroke: var(--color-white-alpha);
   stroke-width: 1px;
+  stroke: var(--color-white-alpha);
+  fill: none;
 }
 
 .keyplan-svg svg > path,
 .keyplan-svg svg > polygon,
 .keyplan-svg svg > polyline,
 .keyplan-svg svg > rect {
-  opacity: 0;
   stroke: none;
+  opacity: 0;
 }
 
 .keyplan-svg .key-area {
@@ -5597,10 +5597,10 @@ html {
 }
 
 .dot-num text {
-  fill: var(--color-white);
-  font-size: 14px;
   font-weight: 700;
   transition: fill 0.3s ease-in-out;
+  fill: var(--color-white);
+  font-size: 14px;
 }
 
 .dot-num .cir-dot {
@@ -5899,10 +5899,10 @@ html {
 }
 
 .item-news-home .box-txt h3 {
+  -webkit-line-clamp: 4;
   display: -webkit-box;
   font-size: 1.2rem;
   font-weight: 500;
-  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -5922,9 +5922,9 @@ html {
 }
 
 .news-highlight .box-txt h3 {
+  -webkit-line-clamp: 4;
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  -webkit-line-clamp: 4;
 }
 
 .go-news {
@@ -6809,9 +6809,9 @@ html {
 .icon-svg .after,
 .icon-svg .before {
   fill: none;
+  stroke-width: 1;
   stroke-dasharray: 570;
   stroke-dashoffset: 570;
-  stroke-width: 1;
   transform-origin: 50% 50%;
 }
 
@@ -7523,9 +7523,9 @@ html {
 .close-virtual .c-rotate {
   fill: none;
   stroke: var(--color-white-zero);
+  stroke-width: 1;
   stroke-dasharray: 537;
   stroke-dashoffset: 537;
-  stroke-width: 1;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }

@@ -336,8 +336,8 @@ input[type='search'] {
   h4,
   h5,
   h6 {
-    page-break-after: avoid;
     font-weight: bold !important;
+    page-break-after: avoid;
   }
   p,
   h2,
