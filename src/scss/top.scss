@@ -146,6 +146,12 @@ section {
 .section-top-introduction {
   background: url(../img/top/video_bg_01.jpg) center center / cover no-repeat;
 
+  .outer-common {
+    .outer-wrapper {
+      height: auto;
+    }
+  }
+
   @include pc {
     padding: .90rem 0;
   }
@@ -166,6 +172,12 @@ section {
   .area-thumbnail {
     img {
       object-position: center center;
+    }
+  }
+
+  .outer-common {
+    .outer-wrapper {
+      height: auto;
     }
   }
 
@@ -201,7 +213,6 @@ section {
 
 .section-top-plan {
   background: url(../img/top/plan_img_01.jpg) center center / cover no-repeat;
-  position: relative;
 
   &::after {
     position: absolute;
@@ -231,4 +242,79 @@ section {
 
 .section-top-library {
   background: $color-default url(../img/top/video_bg_01.jpg) center center / cover no-repeat;
+
+  .outer-common {
+    .outer-wrapper {
+      height: auto;
+    }
+  }
+}
+
+.slider-top-library {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  font-size: .24rem;
+  line-height: calc(36 / 24);
+
+  .slider-viewport {
+    width: auto;
+    margin: 0 -7.05rem;
+  }
+
+  .slider-slide {
+    padding: 0 .2rem;
+  }
+
+  .slider-slide.is-current {
+    .slide-banner {
+      transform: scale(1, 1);
+    }
+
+    .slide-wrapper {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .slide-banner {
+    margin-bottom: .15rem;
+    transform: scale(calc(548 / 658), calc(548 / 658));
+    transition: transform 0.5s ease;
+  }
+
+
+  .slide-wrapper {
+    padding: .07rem 1.60rem .07rem 0;
+    min-height: .5rem;
+    position: relative;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+
+  .slide-label {
+    display: block;
+    position: relative;
+    z-index: 0;
+  }
+
+  .slide-arrow {
+    width: .5rem;
+    height: .5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    background: url(../img/top/icon_arrow_01.svg) 50% 50% / 100% auto no-repeat;
+  }
+
+  .slide-arrow.is-previous {
+    right: .85rem;
+  }
+
+  .slide-arrow.is-next {
+    transform: scale(-1, 1);
+  }
 }

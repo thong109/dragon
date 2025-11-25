@@ -130,6 +130,9 @@ section {
 .section-top-introduction {
   background: url(../img/top/video_bg_01.jpg) center center/cover no-repeat;
 }
+.section-top-introduction .outer-common .outer-wrapper {
+  height: auto;
+}
 @media (min-width: 768px) {
   .section-top-introduction {
     padding: 0.9rem 0;
@@ -150,6 +153,9 @@ section {
 .section-top-area .area-thumbnail img {
   -o-object-position: center center;
   object-position: center center;
+}
+.section-top-area .outer-common .outer-wrapper {
+  height: auto;
 }
 @media (min-width: 768px) {
   .section-top-area {
@@ -181,7 +187,6 @@ section {
 
 .section-top-plan {
   background: url(../img/top/plan_img_01.jpg) center center/cover no-repeat;
-  position: relative;
 }
 .section-top-plan::after {
   background: linear-gradient(
@@ -214,6 +219,65 @@ section {
 .section-top-library {
   background: #195450 url(../img/top/video_bg_01.jpg) center center/cover
     no-repeat;
+}
+.section-top-library .outer-common .outer-wrapper {
+  height: auto;
+}
+
+.slider-top-library {
+  color: #fff;
+  font-size: 0.24rem;
+  line-height: 1.5;
+  overflow: hidden;
+  position: relative;
+}
+.slider-top-library .slider-viewport {
+  margin: 0 -7.05rem;
+  width: auto;
+}
+.slider-top-library .slider-slide {
+  padding: 0 0.2rem;
+}
+.slider-top-library .slider-slide.is-current .slide-banner {
+  transform: scale(1, 1);
+}
+.slider-top-library .slider-slide.is-current .slide-wrapper {
+  opacity: 1;
+  pointer-events: auto;
+}
+.slider-top-library .slide-banner {
+  margin-bottom: 0.15rem;
+  transform: scale(0.8328267477, 0.8328267477);
+  transition: transform 0.5s ease;
+}
+.slider-top-library .slide-wrapper {
+  min-height: 0.5rem;
+  opacity: 0;
+  padding: 0.07rem 1.6rem 0.07rem 0;
+  pointer-events: none;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+.slider-top-library .slide-label {
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+.slider-top-library .slide-arrow {
+  background: url(../img/top/icon_arrow_01.svg) 50% 50%/100% auto no-repeat;
+  display: block;
+  height: 0.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.5rem;
+  z-index: 1;
+}
+.slider-top-library .slide-arrow.is-previous {
+  right: 0.85rem;
+}
+.slider-top-library .slide-arrow.is-next {
+  transform: scale(-1, 1);
 }
 
 /*# sourceMappingURL=top.css.map */
