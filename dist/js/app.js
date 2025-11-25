@@ -363,12 +363,13 @@ function slideKeyvisual() {
   sliders.forEach((element) => {
     new Swiper(element, {
       loop: true,
-      speed: 1500,
+      speed: 1000,
       slidesPerView: 1,
       autoplay: {
-        delay: 5000,
+        delay: 3000,
         pauseOnMouseEnter: false,
       },
+      centeredSlides: true,
       pagination: {
         el: element.querySelector('.swiper-pagination'),
         clickable: true,
