@@ -40,11 +40,12 @@ section .bg {
   height: 100%;
   width: 100%;
 }
+.list-top-keyvisual .swiper-slide {
+  overflow: hidden;
+}
 .list-top-keyvisual .slider-image {
   height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
+  position: relative;
   width: 100%;
 }
 .list-top-keyvisual .slider-image img {
