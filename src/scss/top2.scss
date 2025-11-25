@@ -536,7 +536,6 @@ html {
   height: 100%;
   display: block;
   overflow: visible;
-  filter: drop-shadow(0.3rem 0.5rem 0.1rem var(--color-black-alpha-04));
 }
 
 .loader .x-line,
@@ -1131,7 +1130,7 @@ html {
   margin-right: -0.08rem;
 }
 
-.nav-click .nav-text span {
+.nav-click .nav-text > span {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1153,6 +1152,7 @@ html {
 
   &.is-menu {
     opacity: 0;
+    visibility: hidden;
   }
 
   &.is-close {
@@ -1954,37 +1954,7 @@ html {
   }
 }
 
-@media screen and (max-width: 1800px) {
-
-  body,
-  html {
-    font-size: 1vw;
-  }
-}
-
-@media screen and (max-width: 1600px) {
-
-  body,
-  html {
-    font-size: 1.1vw;
-  }
-}
-
-@media screen and (max-width: 1300px) {
-
-  body,
-  html {
-    font-size: 1.2vw;
-  }
-}
-
 @media screen and (max-width: 1100px) {
-
-  body,
-  html {
-    font-size: 17px;
-  }
-
   .not-need {
     display: none;
     visibility: hidden;
@@ -2123,8 +2093,7 @@ html {
   .nav {
     width: 100%;
     height: 100%;
-    left: 0;
-    right: auto;
+    right: 0;
     top: 0;
     display: flex;
     justify-content: center;
@@ -8344,7 +8313,6 @@ form {
 
   .desktop-slide .group-central {
     position: relative;
-    height: auto;
     min-height: inherit;
     left: auto;
     top: auto;
