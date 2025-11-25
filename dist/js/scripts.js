@@ -337,7 +337,8 @@
       new Swiper(element, {
         loop: true,
         speed: 1500,
-        slidesPerView: 1,
+        parallax: true,
+        centeredSlide: true,
         autoplay: {
           delay: 5000,
           pauseOnMouseEnter: false,
