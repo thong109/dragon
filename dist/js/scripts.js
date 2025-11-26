@@ -499,6 +499,55 @@
     });
   };
 
+  const sliderCompany = () => {
+    const sliders = document.querySelectorAll(
+      '.js-slider-company [data-slider-role="viewport"]',
+    );
+    if (!sliders.length) return;
+
+    sliders.forEach((slider) => {
+      const wrapper = slider.querySelector('.swiper-wrapper');
+      if (!wrapper) return;
+
+      const originalSlides = Array.from(wrapper.children);
+      const isOpposite =
+        slider.getAttribute('data-slider-direction') === 'opposite';
+      const directionSetting = isOpposite ? 'rtl' : 'ltr';
+
+      const getTotalWidth = () => {
+        return Array.from(wrapper.children).reduce((sum, slide) => {
+          return sum + slide.offsetWidth;
+        }, 0);
+      };
+
+      const viewportWidth = slider.offsetWidth;
+      let totalWidth = getTotalWidth();
+
+      while (totalWidth < viewportWidth * 2) {
+        originalSlides.forEach((slide) => {
+          const clone = slide.cloneNode(true);
+          wrapper.appendChild(clone);
+        });
+        totalWidth = getTotalWidth();
+      }
+
+      new Swiper(slider, {
+        loop: true,
+        slidesPerView: 'auto',
+        speed: 5000,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+          reverseDirection: isOpposite,
+          pauseOnMouseEnter: true,
+        },
+        allowTouchMove: false,
+        freeMode: false,
+        freeModeMomentum: false,
+      });
+    });
+  };
+
   const goTop = () => {
     if ($('.js-go-top').length) {
       const btnTop = $('.js-go-top');
@@ -557,6 +606,7 @@
   sliderKeyvisual();
   sliderLibrary();
   sliderShowcase();
+  sliderCompany();
   goTop();
 })();
 

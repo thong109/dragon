@@ -1,2 +1,68 @@
 @use '../_base/variable'as *;
 @use '../_base/mixin'as *;
+
+.footer-common {
+  background: #003430 url(../img/common/footer_bg_01.png) 50% 0% / 100% auto no-repeat;
+}
+
+.block-footer-information {
+  padding: .78rem 0 .8rem;
+
+  .block-wrapper {
+    width: 5.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .block-wrapper:nth-child(1) {
+    .block-logo {
+      max-width: 1.79rem;
+    }
+  }
+
+  .block-wrapper:nth-child(2) {
+    .block-logo {
+      max-width: 2.92rem;
+    }
+  }
+
+  .block-logo {
+    min-height: 1.8rem;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    display: flex;
+    gap: .3rem;
+    justify-content: space-between;
+  }
+
+  .title-common-primary {
+    margin-bottom: .24rem;
+    font-size: .4rem;
+    line-height: calc(60 / 40);
+  }
+}
+
+.slider-footer-company {
+  margin-top: 1.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: .37rem;
+
+  .slider-viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slider-wrapper,
+  .slider-slide {
+    transition-timing-function: linear !important;
+  }
+
+  .slider-slide {
+    width: auto;
+    padding: 0 .18rem;
+  }
+}
