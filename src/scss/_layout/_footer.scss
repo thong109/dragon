@@ -2,7 +2,7 @@
 @use '../_base/mixin'as *;
 
 .footer-common {
-  background: url(../img/common/footer_bg_01.png) 50% 0% / 100% auto no-repeat, url(../img/common/footer_bg_02.png) 0% 0% / 100% auto repeat;
+  background: url(../img/common/footer_bg_01.jpg) 50% 0% / 100% auto no-repeat, url(../img/common/footer_bg_02.jpg) 50% 0% / 100% auto repeat;
   background-color: #003430;
 }
 
@@ -85,10 +85,27 @@
     gap: .7rem .5rem;
     border-top: 1px solid #d9d9d9;
   }
+
+  .contact-credits {
+    width: 10.58rem;
+    margin-top: -1.47rem;
+    flex: 0 0 auto;
+  }
+  
+  .credits-wrapper {
+    margin-top: .25rem;
+    font-size: .2rem;
+    line-height: calc(26 / 20);
+
+    strong {
+      color: #c1a880;
+    }
+  }
 }
 
 .table-footer-contact {
   width: 10.58rem;
+  padding-bottom: 1.47rem;
   display: flex;
   flex-wrap: wrap;
   gap: .42rem;
@@ -172,5 +189,21 @@
     margin-top: .2rem;
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+.list-footer-sns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem;
+
+  .list-item {
+    width: .34rem;
+    flex: 0 0 auto;
+  }
+
+  .item-wrapper {
+    display: block;
+    position: relative;
   }
 }
