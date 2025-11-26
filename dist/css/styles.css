@@ -551,7 +551,13 @@ body {
   transition-timing-function: linear !important;
 }
 .slider-footer-company .slider-slide {
+  height: 1.7rem;
   padding: 0 0.18rem;
+  width: auto;
+}
+.slider-footer-company .slider-slide img {
+  display: block;
+  height: 100%;
   width: auto;
 }
 

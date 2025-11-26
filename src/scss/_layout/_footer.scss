@@ -63,6 +63,13 @@
 
   .slider-slide {
     width: auto;
+    height: 1.7rem;
     padding: 0 .18rem;
+
+    img {
+      width: auto;
+      height: 100%;
+      display: block;
+    }
   }
 }
