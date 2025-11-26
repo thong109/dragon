@@ -421,6 +421,7 @@ input[type='search'] {
 }
 
 .contain-common {
+  display: block;
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
@@ -527,33 +528,29 @@ body {
 .button-common-primary {
   align-items: center;
   background-color: #c19e74;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   color: #fff;
   display: flex;
+  font-size: 0.22rem;
   justify-content: center;
+  line-height: 1.2272727273;
+  min-width: 1.66rem;
+  padding: 0.09rem 0.4rem 0.09rem 0.2rem;
   position: relative;
 }
 .button-common-primary::after {
   content: '';
   display: block;
-  margin-right: 0.2rem;
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 0.2rem;
+  top: calc(50% - 0.06rem);
   -webkit-mask: url(../img/common/icon_arrow_01.svg) 50% 50% / contain no-repeat;
   background-color: #fff;
-  height: 0.1rem;
+  height: 0.12rem;
   mask: url(../img/common/icon_arrow_01.svg) 50% 50% / contain no-repeat;
-  transition: margin-right 0.5s ease-in-out;
-  width: 0.1rem;
-}
-@media (min-width: 768px) {
-  .button-common-primary {
-    min-height: 0.45rem;
-    padding: 0.02rem 0.35rem 0.03rem 0.1rem;
-    width: 1.66rem;
-  }
+  transition: right 0.5s ease-in-out;
+  width: 0.12rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -2,32 +2,29 @@
 @use '../../_base/mixin'as *;
 
 .button-common-primary {
+  min-width: 1.66rem;
+  padding: .09rem .4rem .09rem .2rem;
   position: relative;
   background-color: $color-lion;
   display: flex;
   align-items: center;
   justify-content: center;
   color: $color-white;
-  border-radius: .50rem;
+  border-radius: .25rem;
+  font-size: .22rem;
+  line-height: calc(27 / 22);
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-right: .20rem;
+    top: calc(50% - .06rem);
+    right: .2rem;
     mask: url(../img/common/icon_arrow_01.svg) 50% 50% / contain no-repeat;
-    transition: margin-right 0.5s ease-in-out;
-    width: .10rem;
-    height: .10rem;
+    transition: right 0.5s ease-in-out;
+    width: .12rem;
+    height: .12rem;
     background-color: $color-white;
-  }
-
-  @include pc {
-    padding: .02rem .35rem .03rem .1rem;
-    width: 1.66rem;
-    min-height: .45rem;
   }
 }

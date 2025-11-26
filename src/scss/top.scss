@@ -1,59 +1,58 @@
-@use '_base/_variable'as *;
-@use '_base/_mixin'as *;
+@use '_base/_variable' as *;
+@use '_base/_mixin' as *;
 
-body {
-  overflow: hidden;
-  height: 100vh;
-}
+.page-common-parallax {
+  position: relative;
 
-section {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
+  section {
+    width: 100%;
+    position: relative;
+  }
 }
 
 .outer-common {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   position: relative;
   z-index: 10;
 
   .outer-viewport {
     height: 100%;
-    display: flex;
-    align-items: center;
+    overflow: hidden auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
   }
-  
+
   .outer-wrapper {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
   }
 }
 
 .section-top-keyvisual {
+  height: 100vh;
   background-color: $color-default;
 }
 
 .slider-top-keyvisual {
-  height: 100%;
   width: 100%;
-
-  &>div {
-    width: 100%;
-    height: 100%;
-  }
+  height: 100%;
 
   .slider-slide {
     overflow: hidden;
   }
 
   .slide-banner {
-    height: 100%;
     width: 100%;
+    height: 100vh;
     position: relative;
   }
 
@@ -63,44 +62,44 @@ section {
 }
 
 .section-top-information {
-  background: url(../img/top/information_bg_01.jpg) center center / cover no-repeat;
+  height: 100vh;
+  background: url(../img/top/information_bg_01.jpg) 50% 50% / cover no-repeat;
   position: relative;
 
   &::after {
-    position: absolute;
     content: "";
+    position: absolute;
     background: linear-gradient(180deg, #195450 36.38%, rgba(25, 84, 80, 0) 100%);
     opacity: 0.8;
     transform: matrix(1, 0, 0, -1, 0, 0);
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 5.74rem;
     z-index: 0;
+    pointer-events: none;
   }
 
   .wrapper {
     position: relative;
     z-index: 1;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
 
   .information-controller {
+    margin-bottom: .2rem;
     display: flex;
     justify-content: center;
   }
 
-  @include pc {
-    padding: .5rem 0 0;
-
-    &::after {
-      height: 5.74rem;
-    }
-
-    .information-controller {
-      margin-bottom: .2rem;
+  .outer-common {
+    .outer-wrapper {
+      padding-top: .9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
   }
 }
@@ -110,138 +109,113 @@ section {
 
   .list-wrapper {
     @include reset-list;
+
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .list-item {
     border-left: 1px solid rgba($color: $color-white, $alpha: .4);
+    width: calc(100% / 6);
+    min-height: 2.12rem;
+    padding: .22rem;
   }
 
   .item-title {
+    margin-bottom: .11rem;
+    font-size: .28rem;
     font-weight: 400;
-  }
-
-  @include pc {
-    .list-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .list-item {
-      width: calc(100% / 6);
-      padding: .16rem 0 .38rem;
-    }
-
-    .item-wrapper {
-      padding: .2rem .18rem;
-    }
-
-    .item-title {
-      margin-bottom: .8rem;
-      font-size: .28rem;
-      line-height: 1.5;
-    }
+    line-height: calc(36 / 28);
   }
 }
 
 .section-top-introduction {
-  background: url(../img/top/video_bg_01.jpg) center center / cover no-repeat;
+  height: 100vh;
+  background: url(../img/top/video_bg_01.jpg) 50% 50% / cover no-repeat;
 
   .outer-common {
     .outer-wrapper {
+      padding: .90rem 0;
       height: auto;
     }
-  }
-
-  @include pc {
-    padding: .90rem 0;
   }
 }
 
 .section-top-area {
+  height: 100vh;
   background-color: #024b40;
 
-  .wrapper {
+  .area-viewport {
+    width: 100%;
+    background: #024b40 url(../img/top/area_img_01.png) 100% 0% / auto 100% no-repeat;
+    padding-top: calc(980 / 1920 * 100%);
     position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
   }
 
-  .area-thumbnail {
-    img {
-      object-position: center center;
+  .area-wrapper {
+    width: calc(402 / 1920 * 100%);
+    position: absolute;
+    top: calc(159 / 980 * 100%);
+    left: calc(136 / 1920 * 100%);
+    padding: .9rem 0;
+  }
+
+  .outer-common {
+    .outer-wrapper {
+      justify-content: flex-end;
+    }
+  }
+
+  .title-common-primary {
+    margin: -0.4rem 0 .25rem .14rem;
+  }
+}
+
+.section-top-utilities {
+  background: $color-default url(../img/top/utilities_bg_01.png) 50% 50% / cover no-repeat;
+}
+
+.section-top-plan {
+  height: 1080px;
+  background-color: #024b40;
+
+  .plan-viewport {
+    width: 100%;
+    background: #024b40 url(../img/top/plan_img_01.jpg) 100% 50% / 100% auto no-repeat;
+    padding-top: calc(1080 / 1920 * 100%);
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: linear-gradient(180deg, #004944 13.51%, rgba(0, 73, 68, 0) 95.68%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4.68rem;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 1.46rem;
+      right: 0;
+      left: 0;
+      z-index: 1;
     }
   }
 
   .outer-common {
     .outer-wrapper {
-      height: auto;
+      justify-content: flex-end;
     }
   }
 
-  @include pc {
-    padding: 2.7rem 0;
-
-    .area-thumbnail {
-      max-width: 17.01rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-
-    .area-wrapper {
-      max-width: 4.66rem;
-    }
-
-    .area-image {
-      max-width: 4.02rem;
-      margin-left: -.14rem;
-    }
-
-    .title-common-primary {
-      margin-bottom: .24rem;
-    }
-  }
-}
-
-.section-top-utilities {
-  background: $color-default url(../img/top/utilities_bg_01.png) center center / cover no-repeat;
-}
-
-.section-top-plan {
-  background: url(../img/top/plan_img_01.jpg) center center / cover no-repeat;
-
-  &::after {
-    position: absolute;
-    content: "";
-    background: linear-gradient(180deg, #004944 13.51%, rgba(0, 73, 68, 0) 95.68%);
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 0;
-  }
-
-  .wrapper {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  @include pc {
-    padding: 1.45rem 0;
-
-    &::after {
-      height: 4.68rem;
-    }
-  }
+  .title-common-primary {}
 }
 
 .section-top-library {
-  background: $color-default url(../img/top/video_bg_01.jpg) center center / cover no-repeat;
+  background: $color-default url(../img/top/video_bg_01.jpg) 50% 50% / cover no-repeat;
 
   .outer-common {
     .outer-wrapper {
