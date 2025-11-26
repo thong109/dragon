@@ -2,7 +2,8 @@
 @use '../_base/mixin'as *;
 
 .footer-common {
-  background: #003430 url(../img/common/footer_bg_01.png) 50% 0% / 100% auto no-repeat;
+  background: url(../img/common/footer_bg_01.png) 50% 0% / 100% auto no-repeat, url(../img/common/footer_bg_02.png) 0% 0% / 100% auto repeat;
+  background-color: #003430;
 }
 
 .block-footer-information {
@@ -71,5 +72,105 @@
       height: 100%;
       display: block;
     }
+  }
+}
+
+.contact-footer {
+  color: #fff;
+
+  .wrapper {
+    padding: .5rem 0 .69rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .7rem .5rem;
+    border-top: 1px solid #d9d9d9;
+  }
+}
+
+.table-footer-contact {
+  width: 10.58rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .42rem;
+  flex: 0 0 auto;
+
+  .table-entry {
+    width: calc(50% - .21rem);
+  }
+
+  .entry-title {
+    margin-bottom: .25rem;
+    display: block;
+    font-size: .2rem;
+    font-weight: 700;
+    line-height: calc(26 / 20);
+  }
+}
+
+.list-footer-details {
+  display: flex;
+  flex-direction: column;
+  gap: .06rem;
+  font-size: .2rem;
+  line-height: calc(26 / 20);
+
+  .list-item {
+    display: flex;
+  }
+
+  .item-icon {
+    width: .18rem;
+    height: .26rem;
+    margin-right: .21rem;
+    display: block;
+    flex: 0 0 auto;
+    background: 50% 50% / 100% auto no-repeat;
+  }
+
+  .item-icon.is-address {
+    background-image: url(../img/common/icon_contact_01.svg);
+  }
+
+  .item-icon.is-email {
+    background-image: url(../img/common/icon_contact_02.svg);
+  }
+
+  .item-icon.is-phone {
+    background-image: url(../img/common/icon_contact_03.svg);
+  }
+}
+
+.form-footer-contact {
+  flex: 1 1 0;
+
+  .form-title {
+    margin-bottom: .2rem;
+    display: block;
+    font-size: .25rem;
+    line-height: calc(30 / 25);
+    font-weight: 700;
+    color: #c1a880;
+  }
+
+  .form-detail {
+    margin-bottom: .17rem;
+    font-size: .2rem;
+    line-height: calc(26 / 20);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .08rem;
+  }
+
+  .form-controller {
+    margin-top: .2rem;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
