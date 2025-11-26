@@ -519,9 +519,11 @@ body {
 }
 .block-footer-information .block-wrapper:nth-child(1) .block-logo {
   max-width: 1.79rem;
+  width: 100%;
 }
 .block-footer-information .block-wrapper:nth-child(2) .block-logo {
   max-width: 2.92rem;
+  width: 100%;
 }
 .block-footer-information .block-logo {
   margin: 0 auto;
